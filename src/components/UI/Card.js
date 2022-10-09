@@ -1,4 +1,4 @@
-import "./Card.css"
+import "./Card.css";
 
 
 // Card.js
