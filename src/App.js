@@ -1,8 +1,12 @@
 import "./App.css"
-import Card from "./components/UI/Card";
-import QuizBackground from "./components/QuizBackground/QuizBackground";
+import QuizBackground from "./components/UI/QuizBackground/QuizBackground";
+import Card from "./components/UI/Card/Card";
+import QuizAndNavigation from "./components/QuizAndNavigation/QuizAndNavigation";
+import TopBand from "./components/TopBanner/TopBand";
 import axios from 'axios';
 
+
+// App.js
 function App() {
   axios({
     url: "https://opentdb.com/api.php",
@@ -45,14 +49,11 @@ function App() {
 
 
   return (
-    <div className="wrapper">
-      <QuizBackground>
-        <p>whyNot?</p>
-        <Card className="test">
-          test
-        </Card>
-      </QuizBackground>
-    </div>
+    <QuizBackground className="backgroundDefault">
+      <TopBand></TopBand>
+
+      <QuizAndNavigation></QuizAndNavigation>
+    </QuizBackground>
   )
 }
 

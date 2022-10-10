@@ -5,6 +5,10 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
   box-sizing: border-box;
 }
 
+ul{
+  list-style: none;
+}
+
 html {
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -12,6 +16,14 @@ html {
 body {
   margin: 0;
   background-color: #3f3f3f;
+}
+
+p {
+  margin: 0;
+}
+
+button{
+  font-family: 'Lato',sans-serif;
 }
 
 
