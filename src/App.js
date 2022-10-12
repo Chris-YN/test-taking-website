@@ -30,7 +30,7 @@ function App() {
 
   // axios for fetching question to be used as dummy test, from everyone's favorite API opendb 
   // Categories and difficulties are fixed for convinience. 
-  const fetchTestObj = () => {
+  useEffect(() => {
     axios({
       url: "https://opentdb.com/api.php",
       method: "GET",
@@ -56,7 +56,7 @@ function App() {
               }
             } else {
               return {
-                nameOption: answer,
+                answerOption: answer,
                 isCorrect: false,
               }
             }
@@ -69,8 +69,7 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }
-
+  }, [])
 
 
 
@@ -78,9 +77,7 @@ function App() {
     <QuizBackground className="backgroundDefault">
 
       <Routes>
-        <Route path="/" element={<SignIn
-          fetchTestsObj={fetchTestObj}
-        />} />
+        <Route path="/" element={<SignIn />} />
         <Route path="/test-selection" element={<TestSelect />} />
         <Route path="/test" element={<Test
           testObjArray={testObjArray}

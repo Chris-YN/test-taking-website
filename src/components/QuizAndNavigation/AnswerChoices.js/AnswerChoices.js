@@ -2,15 +2,22 @@ import "./AnswerChoices.css";
 
 
 // Choices.js
-const AnswerChoices = () => {
+const AnswerChoices = (props) => {
+  console.log(props.answerOptionsArray);
   
   return (
     <ul>
-      <li><button>Sundance</button></li>
-      <li><button>Woodward</button></li>
-      <li><button>Turner</button></li>
-      <li><button>Booker</button></li>
+      <li><button>{props.answerOptionsArray[0].answerOption}</button></li>
+      <li><button>{props.answerOptionsArray[1].answerOption}</button></li>
+      <li><button>{props.answerOptionsArray[2].answerOption}</button></li>
+      <li><button>{props.answerOptionsArray[3].answerOption}</button></li>
     </ul>
+    // <ul>
+    //   <li><button>11</button></li>
+    //   <li><button>22</button></li>
+    //   <li><button>33</button></li>
+    //   <li><button>44</button></li>
+    // </ul>
     // <form action="">
     //   <input type="radio" id="c1" name="choices" value="Sundance"></input>
     //   <label for="c1">Sundance</label>

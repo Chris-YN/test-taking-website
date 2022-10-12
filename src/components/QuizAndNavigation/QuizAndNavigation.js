@@ -1,33 +1,46 @@
 import "./QuizAndNavigation.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../UI/Card/Card";
 import AnswerChoices from "./AnswerChoices.js/AnswerChoices";
 import Question from "./Question/Question";
 import "./QuizAndNavigation.css";
-import QuizNavigation from "./QuizNavigation/QuizNavigation";
+import Navigation from "./Navigation/Navigation";
 
 
 // QuizAndNavigation.js
 const QuizAndNavigation = (props) => {
-  const [currentQuestionNum, setCurrentQuestionNum] = useState(1)
+  console.log(props.testObjArray);
   const [currentQuestionObj, setCurrentQuestionObj] = useState(props.testObjArray[0])
 
-  const questionString = currentQuestionObj.testObjArray.question;
-  const answerOptionArray = currentQuestionObj.answerButtons;
+  useEffect(()=>{
+    setCurrentQuestionObj(props.testObjArray[props.currentIndex])
+  }, [props.currentIndex])
+
+  const questionString = currentQuestionObj.question;
+  const answerOptionsArray = currentQuestionObj.answerButtons;
+  const testLength = props.testObjArray.length;
 
   return (
     <div>
       <div className="quizAndChoices">
         <Card>
-          <Question></Question>
+          <Question
+            questionString={questionString}
+          ></Question>
         </Card>
 
         <Card>
-          <AnswerChoices></AnswerChoices>
+          <AnswerChoices
+            answerOptionsArray={answerOptionsArray}
+          ></AnswerChoices>
         </Card>
 
       </div>
-      <QuizNavigation></QuizNavigation>
+      <Navigation
+        testLength={testLength}
+        currentIndex={props.currentIndex}
+        setCurrentIndex={props.setCurrentIndex}
+      ></Navigation>
     </div>
 
 

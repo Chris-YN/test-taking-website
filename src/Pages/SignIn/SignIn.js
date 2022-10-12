@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 
 // SignIn.js
-const SignIn = (props) => {
+const SignIn = () => {
   const navigate = useNavigate(); 
 
   const startButtonHandler = (event) => {
-    props.fetchTestsObj();
     navigate("/test");
   }
   return(
