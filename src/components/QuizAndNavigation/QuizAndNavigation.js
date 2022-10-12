@@ -1,4 +1,5 @@
 import "./QuizAndNavigation.css";
+import { useState } from "react";
 import Card from "../UI/Card/Card";
 import AnswerChoices from "./AnswerChoices.js/AnswerChoices";
 import Question from "./Question/Question";
@@ -7,7 +8,12 @@ import QuizNavigation from "./QuizNavigation/QuizNavigation";
 
 
 // QuizAndNavigation.js
-const QuizAndNavigation = () => {
+const QuizAndNavigation = (props) => {
+  const [currentQuestionNum, setCurrentQuestionNum] = useState(1)
+  const [currentQuestionObj, setCurrentQuestionObj] = useState(props.testObjArray[0])
+
+  const questionString = currentQuestionObj.testObjArray.question;
+  const answerOptionArray = currentQuestionObj.answerButtons;
 
   return (
     <div>
