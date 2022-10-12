@@ -1,9 +1,10 @@
 import "./Logo.css";
+import CompanyLogo from "./assets/companyLogo.JPG";
 
 const Logo = () => {
 
   return (
-    <p>LOGO!!</p>
+    <img className="companyLogo" src={CompanyLogo} alt="Plus testing's logo" />
   );
 };
 

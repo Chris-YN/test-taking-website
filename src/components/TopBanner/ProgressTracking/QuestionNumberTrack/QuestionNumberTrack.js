@@ -4,7 +4,7 @@ import "./QuestionNumberTrack.css"
 const QuestionNumberTrack = (props) => {
 
   return(
-    <p>{`${props.currentIndex + 1}/${props.testLength}`}</p>
+    <p>{`Current question: ${props.currentIndex + 1}/${props.testLength}`}</p>
   );
 };
 

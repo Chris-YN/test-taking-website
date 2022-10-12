@@ -12,7 +12,9 @@ const Result = () => {
   return (
     <>
       <h2>Your score is 100 !!</h2>
-      <button onClick={returnButtonHandler}></button>
+      <button onClick={returnButtonHandler}>
+        Back to Sign-in
+      </button>
     </>
   );
 };
